@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+:root{
+    --primary: #2F2D2E;
+    --secondary: #E0E2DB;
+    --dafault: #004FFF;
+    --failed: #D00000;
+    --sucess: #036D19;
+}
+#navbar{
+    background-color: var(--dafault);
+}
+.form-login{
+  
+}
