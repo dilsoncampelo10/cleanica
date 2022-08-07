@@ -30,6 +30,13 @@ class Doctor{
         $this->cpf = strtoupper(trim($gender));
     }
 
+    public function getSpecialty(){
+        return $this->specialty;
+    }
+    public function setSpecialty($s){
+        $this->specialty = $s;
+    }
+
     public function getPhone(){
         return $this->phone;
     }

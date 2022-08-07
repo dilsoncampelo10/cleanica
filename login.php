@@ -23,7 +23,7 @@ if($type == 'patient') : ?>
         </form>
     </div>
     <div>
-        <a href="register.php">Ainda não tem cadastro? Faça agora</a>
+        <a href="register.php?type=patient">Ainda não tem cadastro? Faça agora</a>
     </div>
 </section>
 
@@ -48,7 +48,7 @@ if($type == 'patient') : ?>
         </form>
     </div>
     <div>
-        <a href="register.php">Ainda não tem cadastro? Faça agora</a>
+        <a href="register.php?type=doctor">Ainda não tem cadastro? Faça agora</a>
     </div>
 </section>
 
@@ -72,7 +72,7 @@ if($type == 'patient') : ?>
         </form>
     </div>
     <div>
-        <a href="register.php">Ainda não tem cadastro? Faça agora</a>
+        <a href="register.php?type=employee">Ainda não tem cadastro? Faça agora</a>
     </div>
 </section>
 
