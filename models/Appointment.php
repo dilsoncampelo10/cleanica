@@ -1,10 +1,19 @@
 <?php
 
 class Appointment{
+    private $id;
     private $date;
     private $time;
     private $patient;
     private $doctor;
+
+
+    public function getId(){
+        return $this->id;
+    }
+    public function setId($id){
+        $this->id = $id;
+    }
 
     public function getDate(){
         return $this->date;
@@ -37,7 +46,7 @@ interface AppointmentDao{
 
     public function findAll();
 
-    public function findById();
+    public function findById($id);
 
     public function update(Appointment $a);
 

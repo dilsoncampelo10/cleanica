@@ -1,4 +1,6 @@
-<?php require_once 'config/config.php';?>
+<?php require_once 'config/config.php';
+
+?>
 <header>
 <nav class="navbar navbar-dark" id="navbar">
   <div class="container-fluid">
@@ -12,13 +14,13 @@
           <a class="nav-link" aria-current="page" href="<?=BASE_URL?>/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="<?=BASE_URL?>/login.php?type=patient">Marcar consulta</a>
+          <a class="nav-link <?=$status?>" href="<?=BASE_URL?>/appointment.php">Marcar consulta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=BASE_URL?>/login.php?type=doctor">Analisar prontuário</a>
+          <a class="nav-link  <?=$status?>" href="<?=BASE_URL?>/medicalrecord.php">Analisar prontuário</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=BASE_URL?>/login.php?type=employee">Inscrever convênio</a>
+          <a class="nav-link  <?=$status?>" href="<?=BASE_URL?>/healthinsurance.php">Inscrever convênio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?=BASE_URL?>/<?=$url?>?logout">Desconectar</a>
