@@ -19,14 +19,14 @@ class Patient{
         return $this->name;
     }
     public function setName($name){
-        $this->cpf = ucwords(trim($name));
+        $this->name = ucwords(trim($name));
     }
     
     public function getGender(){
         return $this->gender;
     }
     public function setGender($gender){
-        $this->cpf = strtoupper(trim($gender));
+        $this->gender = strtoupper(trim($gender));
     }
 
     public function getPhone(){

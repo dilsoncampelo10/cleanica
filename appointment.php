@@ -1,6 +1,8 @@
 <?php
+require_once 'config/config.php';
 require_once 'templates/header.php';
-if(isset($_SESSION['patient'])):
+
+if($_SESSION['patient']):
 ?>
 
 <section>

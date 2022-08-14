@@ -1,7 +1,12 @@
 <?php
+require_once 'config/config.php';
 require_once 'templates/header.php';
 $type = filter_input(INPUT_GET,'type');
 
+if($_SESSION['alert']){
+    echo $_SESSION['alert'];
+    $_SESSION['alert'] = '';
+}
 
 if($type == 'patient') : ?>
 
@@ -10,7 +15,8 @@ if($type == 'patient') : ?>
         <h1>Faça seu login</h1>
     </div>
     <div >
-        <form action="" method="post" class="form-login">
+        <form action="<?=BASE_URL?>/auth.php" method="post" class="form-login">
+        <input type="hidden" name="type" value="patient">
             <div class="mb-3">
                 <label for="login" class="form-label">Digite seu login</label>
                 <input type="text" name="login" class="form-control" placeholder="Digite seu CPF" id="login">
@@ -35,7 +41,8 @@ if($type == 'patient') : ?>
         <h1>Faça seu login</h1>
     </div>
     <div >
-        <form action="" method="post" class="form-login">
+        <form action="<?=BASE_URL?>/auth.php" method="post" class="form-login">
+        <input type="hidden" name="type" value="doctor">
             <div class="mb-3">
                 <label for="login" class="form-label">Digite seu login</label>
                 <input type="text" name="login" class="form-control" placeholder="Digite seu CRM" id="login">
@@ -59,7 +66,8 @@ if($type == 'patient') : ?>
         <h1>Faça seu login</h1>
     </div>
     <div >
-        <form action="" method="post" class="form-login">
+        <form action="<?=BASE_URL?>/auth.php" method="post" class="form-login">
+            <input type="hidden" name="type" value="employee">
             <div class="mb-3">
                 <label for="login" class="form-label">Digite seu login</label>
                 <input type="text" name="login" class="form-control" placeholder="Digite seu CPF" id="login">
