@@ -14,33 +14,49 @@ if($login && $pass){
         $patient = $patientDao->findByCpf($login);
 
         //logar
-        if($patient->getCpf()===$login && password_verify($pass,$patient->getPassword())){
-            $_SESSION['patient'] = $patient->getName();
-            header("location: ".BASE_URL."/appointment.php");
-            exit();
-           
+        if($patient!=false){
+            if($patient->getCpf()===$login && password_verify($pass,$patient->getPassword())){
+                $_SESSION['patient'] = $patient->getName();
+                header("location: ".BASE_URL."/appointment.php");
+                exit();
+               
+            } else{
+                $_SESSION['alert'] = 'Dados incorretos';
+                header("location: ".BASE_URL."/login.php?type=patient");
+                exit();
+            }
         } else{
             $_SESSION['alert'] = 'Usuário não encontrado';
             header("location: ".BASE_URL."/login.php?type=patient");
             exit();
         }
+        
     
     
     } else if ($type === 'doctor'){
         require_once 'dao/DoctorDaoMysql.php';
         $doctortDao = new DoctorDaoMysql($pdo);
+
+        $doctor = $doctortDao->findByCrm($login);
      
    
         //logar
-        if($doctor->getCrm()===$login && password_verify($pass,$doctor->getPassword())){
-            $_SESSION['doctor'] = $doctor->getName();
-            header("location: ".BASE_URL."medicalrecord.php");
-            exit();
+        if($doctor!=false){
+            if($doctor->getCrm()===$login && password_verify($pass,$doctor->getPassword())){
+                $_SESSION['doctor'] = $doctor->getName();
+                header("location: ".BASE_URL."/medicalrecord.php");
+                exit();
+            } else{
+                $_SESSION['alert'] = 'Dados incorretos';
+                header("location: ".BASE_URL."/login.php?type=doctor");
+                exit();
+            }
         } else{
             $_SESSION['alert'] = 'Usuário não encontrado';
-            header("location: ".BASE_URL."login.php?type=doctor");
+            header("location: ".BASE_URL."/login.php?type=doctor");
             exit();
         }
+        
     
     } else if($type === 'employee'){
         require_once 'dao/EmployeeDaoMysql.php';
@@ -49,11 +65,17 @@ if($login && $pass){
         $employee = $employeeDao->findByCpf($login);
 
         //logar
-        if($employee->getCrm()===$login && password_verify($pass,$employee->getPassword())){
-            $_SESSION['employee'] = $employee->getName();
-            header("location: ".BASE_URL."medicalrecord.php");
-            exit();
+        if($employee!=false){
+            if($employee->getCrm()===$login && password_verify($pass,$employee->getPassword())){
+                $_SESSION['employee'] = $employee->getName();
+                header("location: ".BASE_URL."medicalrecord.php");
+                exit();
+            } else{
+                echo $_SESSION['alert'] = 'CPF e/ou Senha incorreto(s)';
+                $_SESSION['alert'] = '';
+            }
         }
+       
     
     } else{
         $_SESSION['alert'] = 'Usuário não encontrado';

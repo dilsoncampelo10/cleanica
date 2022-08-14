@@ -4,7 +4,7 @@ require_once 'templates/header.php';
 $type = filter_input(INPUT_GET,'type');
 
 if($_SESSION['alert']){
-    echo $_SESSION['alert'];
+    echo "<div class='alert alert-info container' role='alert'>".$_SESSION['alert']."</div>";
     $_SESSION['alert'] = '';
 }
 

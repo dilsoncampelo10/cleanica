@@ -33,25 +33,28 @@ class DoctorDaoMysql implements DoctorDao{
 
     public function findByCrm($crm){
         
-        // $sql = $this->pdo->prepare("SELECT * FROM medicos WHERE crm = :crm");
-        // $sql->bindValue("crm",$crm);
-        // echo "SELECT * FROM medicos WHERE crm = :crm";
-        //$sql->execute();
-        //$doctor = new Doctor();
-       // if($sql->rowCount()>0){
-            // $data = $sql->fetch(PDO::FETCH_ASSOC);
-            // $doctor->setCrm($data['crm']);
-            // $doctor->setName($data['name']);
-            // $doctor->setGender($data['sexo']);
-            // $doctor->setSpecialty($data['especialidade']);
-            // $doctor->setPhone($data['telefone']);
-            // $doctor->setAddress($data['endereco']);
-            // $doctor->setPassword($data['senha']);
-            //var_dump($doctor);
+        $sql = $this->pdo->prepare("SELECT * FROM medicos WHERE crm = :crm");
+        $sql->bindValue("crm",$crm);
+     
+        $sql->execute();
 
-            //return $doctor;
+        $doctor = new Doctor();
 
-       // }
+       if($sql->rowCount()>0){
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
+            $doctor->setCrm($data['crm']);
+            $doctor->setName($data['nome']);
+            $doctor->setGender($data['sexo']);
+            $doctor->setSpecialty($data['especialidade']);
+            $doctor->setPhone($data['telefone']);
+            $doctor->setAddress($data['endereco']);
+            $doctor->setPassword($data['senha']);
+          
+            return $doctor;
+
+       } else{
+            return false;
+       }
     }
 
     public function update(Doctor $d){

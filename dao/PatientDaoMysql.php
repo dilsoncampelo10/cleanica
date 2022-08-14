@@ -44,6 +44,8 @@ class PatientDaoMysql implements PatientDao{
             $patient->setPassword($data['senha']);
 
             return $patient;
+        } else{
+            return false;
         }
     }
 
