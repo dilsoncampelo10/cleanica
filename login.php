@@ -10,49 +10,69 @@ if($_SESSION['alert']){
 
 if($type == 'patient') : ?>
 
-<section class="container">
-    <div>
-        <h1>Faça seu login</h1>
-    </div>
-    <div >
-        <form action="<?=BASE_URL?>/auth.php" method="post" class="form-login">
-        <input type="hidden" name="type" value="patient">
-            <div class="mb-3">
-                <label for="login" class="form-label">Digite seu login</label>
-                <input type="text" name="login" class="form-control" placeholder="Digite seu CPF" id="login">
-            </div>
-            <div class="mb-3">
-                <label for="pass" class="form-label">Digite sua senha</label>
-                <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-            </div>
-            <button type="submit" class="btn btn-primary">Fazer o login</button>
+
+    <div id="bordagrande">
+        <h2>Faça login <br/>Saúde é coisa séria!</h2>
+        <div id="Fotolado">
+            <img src="<?=BASE_URL?>/public/img/Hospital3.gif">
+        </div> 
+        <div id="central">
+            <center>
+                
+            <form action="<?=BASE_URL?>/auth.php" method="post">
+            <br><br> 
+            <h1><b>LOGIN</h1><br></b>
+            <label for="login">Usuário</label>
+                 <input type="hidden" name="type" value="patient">
+            
+            
+                <input type="text" name="login" placeholder="Digite seu CPF" id="login"> <br><br>
+                <label for="pass">Senha</label>
+            
+                <input type="password" name="pass" placeholder="Password" id="pass"> <br><br>
+                <input type="submit" value="Login">
+                <br><br>
+                <input type="checkbox" name="con" id="con">
+                <label for="con" id="label_con">Mantenha-me conectado</label>
         </form>
+            </center>
+        </div>
     </div>
+   
     <div>
         <a href="register.php?type=patient">Ainda não tem cadastro? Faça agora</a>
     </div>
-</section>
+
 
 
 
 <?php elseif($type=='doctor'): ?>
-    <section class="container">
-    <div>
-        <h1>Faça seu login</h1>
-    </div>
-    <div >
-        <form action="<?=BASE_URL?>/auth.php" method="post" class="form-login">
-        <input type="hidden" name="type" value="doctor">
-            <div class="mb-3">
-                <label for="login" class="form-label">Digite seu login</label>
-                <input type="text" name="login" class="form-control" placeholder="Digite seu CRM" id="login">
-            </div>
-            <div class="mb-3">
-                <label for="pass" class="form-label">Digite sua senha</label>
-                <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-            </div>
-            <button type="submit" class="btn btn-primary">Fazer o login</button>
+    <div id="bordagrande">
+        <h2>Faça login <br/>Saúde é coisa séria!</h2>
+        <div id="Fotolado">
+            <img src="<?=BASE_URL?>/public/img/Hospital3.gif">
+        </div> 
+        <div id="central">
+            <center>
+                
+            <form action="<?=BASE_URL?>/auth.php" method="post">
+            <br><br> 
+            <h1><b>LOGIN</h1><br></b>
+            <label for="login">Usuário</label>
+                 <input type="hidden" name="type" value="doctor">
+            
+            
+                <input type="text" name="login" placeholder="Digite seu CRm" id="login"> <br><br>
+                <label for="pass">Senha</label>
+            
+                <input type="password" name="pass" placeholder="Password" id="pass"> <br><br>
+                <input type="submit" value="Login">
+                <br><br>
+                <input type="checkbox" name="con" id="con">
+                <label for="con" id="label_con">Mantenha-me conectado</label>
         </form>
+            </center>
+        </div>
     </div>
     <div>
         <a href="register.php?type=doctor">Ainda não tem cadastro? Faça agora</a>
@@ -61,23 +81,32 @@ if($type == 'patient') : ?>
 
 <?php elseif($type=='employee'): ?>
 
-    <section class="container">
-    <div>
-        <h1>Faça seu login</h1>
-    </div>
-    <div >
-        <form action="<?=BASE_URL?>/auth.php" method="post" class="form-login">
-            <input type="hidden" name="type" value="employee">
-            <div class="mb-3">
-                <label for="login" class="form-label">Digite seu login</label>
-                <input type="text" name="login" class="form-control" placeholder="Digite seu CPF" id="login">
-            </div>
-            <div class="mb-3">
-                <label for="pass" class="form-label">Digite sua senha</label>
-                <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-            </div>
-            <button type="submit" class="btn btn-primary">Fazer o login</button>
+    <div id="bordagrande">
+        <h2>Faça login <br/>Saúde é coisa séria!</h2>
+        <div id="Fotolado">
+            <img src="<?=BASE_URL?>/public/img/Hospital3.gif">
+        </div> 
+        <div id="central">
+            <center>
+                
+            <form action="<?=BASE_URL?>/auth.php" method="post">
+            <br><br> 
+            <h1><b>LOGIN</h1><br></b>
+            <label for="login">Usuário</label>
+                 <input type="hidden" name="type" value="employee">
+            
+            
+                <input type="text" name="login" placeholder="Digite seu CPF" id="login"> <br><br>
+                <label for="pass">Senha</label>
+            
+                <input type="password" name="pass" placeholder="Password" id="pass"> <br><br>
+                <input type="submit" value="Login">
+                <br><br>
+                <input type="checkbox" name="con" id="con">
+                <label for="con" id="label_con">Mantenha-me conectado</label>
         </form>
+            </center>
+        </div>
     </div>
     <div>
         <a href="register.php?type=employee">Ainda não tem cadastro? Faça agora</a>

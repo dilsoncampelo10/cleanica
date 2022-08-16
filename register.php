@@ -55,52 +55,53 @@ if($type == 'patient') : ?>
 
 <?php elseif($type=='doctor'): 
     ?>
-    <section class="container">
-    <div>
-        <h1>Faça seu cadastro</h1>
-    </div>
-    <div >
-        <form action="doctor_insert.php" method="post" class="form-login">
-            <div class="mb-3">
-                <label for="crm" class="form-label">CRM</label>
+    <div id="bordagrande">
+    <h2>Faça seu cadastro <br/>Saúde é coisa séria!</h2>
+  
+    <div id="central">
+        <center>
+            <form action="doctor_insert.php" method="post">
+            <br><br> 
+                <label for="crm">CRM</label>
                 <input type="text" name="crm" class="form-control" placeholder="Digite seu CRM" id="crm">
-            </div>
-            <div class="mb-3">
+                <br><br>
+                
+                
                 <label for="crm" class="form-label">Nome</label>
                 <input type="text" name="name" class="form-control" placeholder="Digite seu nome" id="crm">
-            </div>
-            <div class="mb-3">
-                <p class="form-label">Sexo</p>
-                <input type="radio" name="gender" id="male" class="form-check-input" value="M">
-                <label for="male" class="form-check-label">M</label>
-                <input type="radio" name="gender" id="female" class="form-check-input" value="F">
-                <label for="female" class="form-check-label">F</label>
-            </div>
-            <div class="mb-3">
-                <label for="specialty" class="form-label">Especialidade</label>
-                <input type="text" name="specialty" class="form-control" placeholder="Digite sua especialidade" id="specialty">
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Telefone</label>
-                <input type="tel" name="phone" class="form-control" placeholder="Digite seu telefone" id="phone">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Endereço</label>
-                <input type="tel" name="address" class="form-control" placeholder="Digite seu endereço" id="address">
-            </div>
-
-            <div class="mb-3">
-                <label for="pass" class="form-label">Digite sua senha</label>
-                <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Fazer o cadastro</button>
-        </form>
+                <br><br>
+                <div>
+                    <p>Sexo</p>
+                    <input type="radio" name="gender" id="male" class="form-check-input" value="M">
+                    <label for="male" class="form-check-label">M</label>
+                    <input type="radio" name="gender" id="female" class="form-check-input" value="F">
+                    <label for="female" class="form-check-label">F</label>
+                </div>
+                <br><br>
+                    <label for="specialty" class="form-label">Especialidade</label>
+                    <input type="text" name="specialty" class="form-control" placeholder="Digite sua especialidade" id="specialty">
+                
+                    <br><br>
+                    <label for="phone" class="form-label">Telefone</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="Digite seu telefone" id="phone">
+                
+                    <br><br>>
+                    <label for="address" class="form-label">Endereço</label>
+                    <input type="tel" name="address" class="form-control" placeholder="Digite seu endereço" id="address">
+                    <br><br>
+                
+                    <label for="pass" class="form-label">Digite sua senha</label>
+                    <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
+                            
+                <button type="submit" class="btn btn-primary">Fazer o cadastro</button>
+            </form>
+        </center>
     </div>
-    <div>
+   
+</div>
+<div>
         <a href="login.php?type=doctor">Já possui cadastro? Faça login</a>
     </div>
-</section>
 
 <?php elseif($type=='employee'): ?>
 

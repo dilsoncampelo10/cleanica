@@ -3,8 +3,7 @@ $log = 'paciente';
 $url = 'appointment.php';
 $status = 'active';
 require_once 'config/config.php';
-require_once 'templates/header.php';
-require_once 'templates/navlog.php';
+
 require_once 'dao/AppointmentDaoMysql.php';
 
 $appointmentDao = new AppointmentDaoMysql($pdo);
@@ -18,7 +17,34 @@ if($_SESSION['patient']):
         $_SESSION['alert'] = '';
     }
 ?>
+<?php require_once 'config/config.php'?>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>/public/css/colorido.css">
+    <title>CleaNika</title>
+    <link rel="shortcut icon" href="<?=BASE_URL?>/public/img/logocleaNika.png" type="image/x-icon">
+<body>
 
+    <div class="global-div">
+
+        <div class="topo-div"></div>
+        <center>
+            <img src="<?=BASE_URL?>/public/img/CleaNika2.png">
+        </center>
+        
+        <div class="menu-div">
+            <ul>
+                <li><a href="<?=BASE_URL?>/" title="Home">Início</a></li>
+             
+               
+                <li><a href="Galeria.html" href="#"> Quem Somos</a></li>
+                 <li><a href="#">Fale conosco</a></li>
+                 <li><a href="#" title="Exposição">Doe</a></li>
+                <li><a href="Galeria.html" href="#"> Serviços</a></li>
+                <li> Você está logado como <?=$log?></li>
+            </ul>
+        </div>
 <section>
     <div class="container">
         <h1>Bem-vindo <?=$_SESSION['patient']?></h1>

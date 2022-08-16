@@ -30,7 +30,25 @@ class EmployeeDaoMysql implements EmployeeDao{
     }
 
     public function findByCpf($cpf){
+        $sql = $this->pdo->prepare("SELECT * FROM funcionarios WHERE cpf = :cpf");
+        $sql->bindValue("cpf",$cpf);
+        $sql->execute();
+        $employee = new Employee();
+        if($sql->rowCount()>0){
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
+            $employee->setCpf($data['cpf']);
+            $employee->setName($data['nome']);
+            $employee->setGender($data['sexo']);
+            $employee->setPhone($data['telefone']);
+            $employee->setAddress($data['endereco']);
+            $employee->setOffice($data['cargo']);
+            $employee->setPassword($data['senha']);
 
+
+            return $employee;
+        } else{
+            return false;
+        }
     }
 
     public function update(Employee $e){

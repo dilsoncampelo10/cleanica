@@ -1,0 +1,401 @@
+/*Home*/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+    grid-auto-flow: dense;
+    grid-column-gap: .5em;
+    grid-row-gap: .5em;
+    margin: 20px 0 0 0;
+    
+}
+
+#grid img {
+    width: 300px;
+    height: 350px;
+    margin-left: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all linear 0.6s;
+    margin-top: -720px;
+}
+#grid img:hover{
+   filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+body {
+    
+    color: black;
+    font: normal 62.5% "Lucida Sans Unicode",sans-serif;
+    margin: 0;
+    background-color: #1E90FF;
+    background-image: url('../img/CleaNikafundo.jpg') ;
+}
+/*---- 1.0 em = 10px---*/
+
+
+button {
+    background-color: #0ae76d;
+    height: 50px;
+    width: 150px;
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+   
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 100%;
+    }
+
+ul, ol {
+    list-style: none;
+}
+
+
+
+.anuncios-div {
+    width: 125px;
+    height: 125px;
+    margin-top: 17px;
+    background: #fff;
+}
+
+.anuncios-div, .chamadas-div, .chamadas-div3, .chamadas-div4, .destaques-div, .destaques-div2, .dir-div, .dir-div2,
+.esq-div, .foto-destaque, .foto-destaque5, .foto-destaque6, .foto-destaque2, .rodape-div,.chamadas-div {
+    position: relative;
+    float: left; 
+   
+    
+}
+
+.chamadas-div {
+    width: 301px;
+    height: 400px;
+    background-color: #5BE6FF;
+    margin-top: 17px;
+    padding-bottom: 8px;
+}
+
+.chamadas-div3 {
+    width: 305px;
+    height: 410px;
+    background-color: #5BE6FF;
+    margin: 15px;
+    margin-top: 1%;
+}
+
+
+    .chamadas-div3 img {
+        height: 170px;
+        width: 250px;
+        margin: 20px;
+    }
+
+.chamadas-div4 {
+    width: 301px;
+    height: 410px;
+    background-color: #5BE6FF;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
+    .chamadas-div4 img {
+        height: 170px;
+        width: 250px;
+        margin: 20px;
+    }
+
+
+.destaques-div {
+    width: 620px;
+    height: 230px;
+    background-color: #5BE6FF;
+    padding-bottom: 17px;
+}
+
+.destaques-div2 {
+    width: 620px;
+    height: 240px;
+    background: #5BE6FF;
+    padding-bottom: 40px;
+    margin-left: 17px;
+}
+
+.dir-div {
+    width: 283px;
+    height: 655px;
+    background: #5BE6FF;
+    padding: 0 0 17px 17px;
+}
+
+
+
+.dir-div2 {
+    width: 283px;
+    height: 685px;
+    background: #5BE6FF;
+    padding: 0 0 20px 20px;
+    resize: 10px;
+    margin-top: 1%;
+}
+
+    .dir-div2 img {
+        height: 168px;
+        width: 242px;
+        padding-right: 2px;
+    }
+
+
+
+
+.foto-destaque img {
+    height: 157px;
+    width: 197px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.foto-destaque5 img {
+    height: 170px;
+    width: 260px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.foto-destaque6 img {
+    height: 180px;
+    width: 240px;
+    margin: 2px;
+    padding-top: 10px;
+    margin-left: 25px;
+}
+
+.foto-destaque2 {
+    width: 200px;
+    height: 160px;
+    background: #32CD32;
+    margin: 15px 15px 0 15px;
+    display: inline;
+}
+
+    .foto-destaque2 img {
+        height: 160px;
+        width: 190px;
+    }
+
+
+.esq-div {
+    width: 620px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.global-div {
+    position: absolute;
+    display: block;
+    width: 940px;
+    height: auto;
+    margin: auto;
+    left: 50%;
+    margin-left: -490px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 0 20px 10px 20px;
+}
+
+.maislidos-div {
+    width: 265px;
+    height: auto;
+    background: white;
+    padding-bottom: 17px;
+}
+
+.menu-div {
+    width: 900px;
+    height: auto;
+    background-color: white;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+}
+
+.rodape-div {
+    width: 940px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    margin-top: 17px;
+}
+
+.topo-div {
+    width: 940px;
+    height: 19px;
+    background-color: white;
+}
+
+    .topo-div img {
+        width: 900px;
+    }
+
+
+.busca {
+    height: 20px;
+    width: 251px;
+    border: 0;
+    background-color: #fff;
+    margin: 17px 0;
+    font-style: italic;
+    padding: 7px;
+    color: #6a6a6a;
+}
+
+.clear {
+    clear: both;
+}
+
+.displaynone {
+    display: none;
+}
+
+fieldset {
+    border: 0;
+}
+
+.left {
+    float: left;
+}
+
+.left17 {
+    margin-left: 15px;
+    text-align: justify;
+}
+
+.right17 {
+    margin-right: 17px;
+}
+
+.right {
+    float: right;
+}
+
+.top8 {
+    margin-top: 8px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+    a img {
+        border: 0;
+    }
+
+.leiamais {
+    display: block;
+    float: right;
+    background-color: white;
+    font: 1em Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    padding: 2px 3px;
+    margin: 5px 17px 0 0;
+    display: inline;
+}
+
+.menu-div li {
+    border-right: 1px solid black;
+    font: 1.2em Arial, Helvetica, sans-serif;
+    display: inline;
+}
+
+    .menu-div li:last-child {
+        border: 0;
+    }
+
+    .menu-div li a {
+        color: black;
+        padding: 0 13px;
+    }
+
+        .menu-div li a:hover {
+            color: #32CD32;
+        }
+
+
+.maisartigos li {
+    font: 1.2em Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    list-style: disc;
+    list-style-position: inside;
+    margin: 0 17px;
+}
+
+    .maisartigos li a {
+        color: black;
+    }
+
+.maisartigos.escuro li a {
+    color: black;
+}
+
+
+.chamadas-div p {
+    margin: 0 17px;
+}
+
+.chamadas-div4 p {
+    margin: 20 50px;
+}
+
+h1 {
+    font: bold 2em Arial, Helvetica, sans-serif;
+    margin: 17px 0 8px 0;
+    color: black;
+}
+
+h2 {
+    font: bold 1.6em Arial, Helvetica, sans-serif;
+    margin: 9px 0 7px 17px;
+    color: black;
+}
+
+h5, h4, h6 {
+    font: bold 2.4em Arial, Helvetica, sans-serif;
+    padding: 8px 20px;
+    background: white;
+    color: black;
+}
+
+h4 {
+    font-size: 1.8em;
+}
+
+h6 {
+    font-size: 1.4em;
+    margin: 35px 17px 8px 17px;
+    padding: 2px;
+    text-align: center;
+}
+
+p {
+    font: 1.3em Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    color: black;
+    text-align: justify;
+    margin-right: 20px;
+}
+
+.rodape-div p {
+    margin: 10px 17px;
+    text-align: justify;
+}

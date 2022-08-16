@@ -6,7 +6,7 @@ $appointmentDao = new AppointmentDaoMysql($pdo);
 $id_delet = filter_input(INPUT_GET,'delete');
 $id_edit = filter_input(INPUT_GET,'edit');
 
-if($_POST['ok']){
+if(isset($_POST['ok'])){
     $date = filter_input(INPUT_POST,'date');
     $time = filter_input(INPUT_POST,'time');
     $patient = filter_input(INPUT_POST,'patient');

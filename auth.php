@@ -1,6 +1,7 @@
 <?php
 require_once 'config/config.php';
 
+
 $type = filter_input(INPUT_POST,'type');
 $login = filter_input(INPUT_POST,'login');
 $pass = filter_input(INPUT_POST,'pass');
@@ -60,20 +61,25 @@ if($login && $pass){
     
     } else if($type === 'employee'){
         require_once 'dao/EmployeeDaoMysql.php';
-        $employeetDao = new EmployeeDaoMysql($pdo);
+        $employeeDao = new EmployeeDaoMysql($pdo);
 
         $employee = $employeeDao->findByCpf($login);
 
         //logar
         if($employee!=false){
-            if($employee->getCrm()===$login && password_verify($pass,$employee->getPassword())){
+            if($employee->getCpf()===$login && password_verify($pass,$employee->getPassword())){
                 $_SESSION['employee'] = $employee->getName();
-                header("location: ".BASE_URL."medicalrecord.php");
+                header("location: ".BASE_URL."/healthinsurance.php");
                 exit();
             } else{
-                echo $_SESSION['alert'] = 'CPF e/ou Senha incorreto(s)';
-                $_SESSION['alert'] = '';
+                $_SESSION['alert'] = 'CPF e/ou Senha incorreto(s)';
+                header("location: ".BASE_URL."/login.php?type=employee");
+                exit();
             }
+        } else{
+            $_SESSION['alert'] = 'Usuário não encontrado';
+            header("location: ".BASE_URL."/login.php?type=employee");
+            exit();
         }
        
     

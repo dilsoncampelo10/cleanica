@@ -30,7 +30,7 @@ $obj = $ap->findById($id);
                     <label for="doctor" class="form-label">Nome do médico</label>
                     <input type="text" name="doctor" class="form-control" placeholder="Digite nome do médico" id="doctor" value="<?=$obj->getDoctor()?>">
             </div>
-            <button type="submit" class="btn btn-primary" name="ok">Editar consulta</button>
+            <button type="submit" class="btn btn-primary">Editar consulta</button>
         </form>
 
 <?php elseif($_GET['edit_mr']): ?>
@@ -74,7 +74,7 @@ $obj = $ap->findById($id);
                     <label for="exam" class="form-label">Exame</label>
                     <input type="text" name="exam" class="form-control" placeholder="Digite o exame" id="exam" value="<?=$obj->getExam()?>">
             </div>
-            <button type="submit" class="btn btn-primary">Marcar consulta</button>
+            <button type="submit" class="btn btn-primary">Editar prontuário</button>
         </form>
 
 <?php endif;?>
