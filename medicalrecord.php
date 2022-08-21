@@ -1,11 +1,12 @@
 <?php
-$log = 'médico';
-$url = 'medicalrecord.php';
 
 require_once 'config/config.php';
-require_once 'templates/header.php';
-require_once 'templates/navlog.php';
 require_once 'dao/MedicalrecordDaoMysql.php';
+
+if(!isset($_COOKIE['user'])&& !isset($_COOKIE['check'])){
+    session_destroy();
+}
+
 
 $medicalrecord = new MedicalrecordDaoMysql($pdo);
 
@@ -13,7 +14,58 @@ $data = $medicalrecord->findAll();
 
 if($_SESSION['doctor']):
 ?>
+<?php 
+      require_once 'templates/header.php';
 
+      if(isset($_GET['desconnect'])){
+        session_destroy();
+     
+        header('location: login.php?type=doctor');
+        exit();
+    }
+   
+?>
+
+
+<header id="home">
+          <nav>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                  <nav class="pull">
+                    <ul class="top-nav">
+                      <li><a href="<?=BASE_URL?>">Inicio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="<?=BASE_URL?>/appointment.php">Realizar cadastro<span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+        
+                      <li><a href="<?=BASE_URL?>/medicalrecord.php?desconnect">Desconectar <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <section class="hero" id="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                  <h1 class="animated fadeInDown"><?=$_SESSION['doctor']?></h1>
+                  <p class="animated fadeInUp delay-05s">Logo abaixo poderá analisar os prontuários</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <a href="#medi" class="learn-more-btn">Analise o prontuário</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </header>
 <section>
     <div class="container">
         <h1>Bem-vindo <?=$_SESSION['doctor']?></h1>
@@ -21,8 +73,8 @@ if($_SESSION['doctor']):
     <div class="container">
         <h2>Crie seu prontuário</h2>
     </div>
-    <secton class="section-main">
-        <form action="medicalrecord_process.php" method="post" class="mb-3 form-main">
+    <secton class="section-main ">
+        <form action="medicalrecord_process.php" method="post" class="mb-3 form-main container">
             <div class="mb-3">
                 <label for="date" class="form-label">Insira data da consulta</label>
                 <input type="date" name="date" class="form-control" id="date">
@@ -50,15 +102,13 @@ if($_SESSION['doctor']):
             <div class="mb-3">
                     <label for="exam" class="form-label">Exame</label>
                     <input type="text" name="exam" class="form-control" placeholder="Digite o exame" id="exam">
-            </div>
+            </div> <br> <br>
             <button type="submit" class="btn btn-primary" name="ok">Criar prontuário</button>
         </form>
-        <div>
+        <div class="container" id="medi">
                 <h1>Confira consultas já marcadas</h1>
                 <div>
-                <button class="btn btn-dark" onclick="displayTable()">
-                    Vizualizar
-                </button>
+                
                 <table class="table table-success table-striped" id="table">
                     <thead>
                         <tr>
@@ -96,7 +146,9 @@ if($_SESSION['doctor']):
 </section>
 
 
-<?php else:
+<?php 
+require_once 'templates/footer.php';
+else:
 
 header('location: login.php?type=doctor');
 exit();

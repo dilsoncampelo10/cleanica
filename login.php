@@ -1,6 +1,6 @@
 <?php
 require_once 'config/config.php';
-require_once 'templates/header.php';
+require_once 'templates/headerLogin.php';
 $type = filter_input(INPUT_GET,'type');
 
 if($_SESSION['alert']){
@@ -39,8 +39,10 @@ if($type == 'patient') : ?>
         </div>
     </div>
    
-    <div>
-        <a href="register.php?type=patient">Ainda não tem cadastro? Faça agora</a>
+    <div style="text-align: center;">
+        <a href="register.php?type=patient">Ainda não tem cadastro? Faça agora</a> <br>
+        <a href="<?=BASE_URL?>"><i class="fa-solid fa-arrow-rotate-left"></i>
+        Voltar</a>
     </div>
 
 
@@ -70,12 +72,16 @@ if($type == 'patient') : ?>
                 <br><br>
                 <input type="checkbox" name="con" id="con">
                 <label for="con" id="label_con">Mantenha-me conectado</label>
+            
+              
         </form>
             </center>
         </div>
     </div>
-    <div>
+    <div style="text-align: center;">
         <a href="register.php?type=doctor">Ainda não tem cadastro? Faça agora</a>
+        <br> 
+        <a href="<?=BASE_URL?>"><i class="fa-solid fa-arrow-rotate-left"></i>Voltar</a>
     </div>
 </section>
 
@@ -108,8 +114,10 @@ if($type == 'patient') : ?>
             </center>
         </div>
     </div>
-    <div>
+    <div style="text-align: center;">
         <a href="register.php?type=employee">Ainda não tem cadastro? Faça agora</a>
+        <br>
+        <a href="<?=BASE_URL?>"><i class="fa-solid fa-arrow-rotate-left"></i>Voltar</a>
     </div>
 </section>
 

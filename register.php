@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'templates/header.php';
+require_once 'templates/headerRegister.php';
+require_once  'config/config.php';
 $type = filter_input(INPUT_GET,'type');
 
 if($_SESSION['alert']){
@@ -9,147 +10,160 @@ if($_SESSION['alert']){
 }
 
 if($type == 'patient') : ?>
+<div id="Fotolado">
+        <h2>Faça seu Cadastro! <br> Para pacientes</h2>
+        <img src="<?=BASE_URL?>/public/img/fundocleaNika.png">
+    </div>
 
-<section class="container">
-    <div>
-        <h1>Faça seu cadastro</h1>
+    <div id="central">
+        <img src="<?=BASE_URL?>/public/img/logocleaNika.png"  padding-top: 20px;
+            width: 230px;
+            height: 140px;>
+        <center>
+            <form action="patient_insert.php" method="post">
+            
+            <label for="cpf">CPF</label>
+                <input type="text" name="cpf" placeholder="Digite seu CPF" id="cpf">         <br>         <br>         
+ 
+          
+                <label for="name">Nome</label>
+                <input type="text" name="name"  placeholder="Digite seu nome" id="name"><br><br>
+            
+                <label for="phone">Telefone</label>
+                <input type="tel" name="phone"  placeholder="Digite seu telefone" id="phone"><br><br>
+          
+                <label for="address">Endereço</label>
+                <input type="tel" name="address"  placeholder="Digite seu endereço" id="address"><br><br>
+           
+                <label for="pass">Senha</label>
+                <input type="password" name="pass"  placeholder="Digite sua senha" id="pass">
+                <p>Sexo</p>
+                <div class="grupo">
+                     <input type="radio" name="gender" id="male" class="form-check-input" value="M">
+                    <label for="male" >Masculino</label><br><br>
+                    <input type="radio" name="gender" id="female" class="form-check-input" value="F">
+                    <label for="female" >Feminino</label>
+                </div>
+               
+            <button type="submit" >Fazer o cadastro</button> <br><br>
+            <a href="<?=BASE_URL?>/login.php?type=patient" title="Login">Já tem sua conta? Faça seu Login!</a>
+            </form>
+        </center>
     </div>
-    <div >
-        <form action="patient_insert.php" method="post" class="form-login">
-            <div class="mb-3">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" name="cpf" class="form-control" placeholder="Digite seu CPF" id="cpf">
-            </div>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" name="name" class="form-control" placeholder="Digite seu nome" id="name">
-            </div>
-             <div class="mb-3">
-                <p class="form-label">Sexo</p>
-                <input type="radio" name="gender" id="male" class="form-check-input" value="M">
-                <label for="male" class="form-check-label">M</label>
-                <input type="radio" name="gender" id="female" class="form-check-input" value="F">
-                <label for="female" class="form-check-label">F</label>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Telefone</label>
-                <input type="tel" name="phone" class="form-control" placeholder="Digite seu telefone" id="phone">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Endereço</label>
-                <input type="tel" name="address" class="form-control" placeholder="Digite seu endereço" id="address">
-            </div>
-            <div class="mb-3">
-                <label for="pass" class="form-label">Digite sua senha</label>
-                <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-            </div>
-            <button type="submit" class="btn btn-primary">Fazer o cadastro</button>
-        </form>
-    </div>
-    <div>
-        <a href="login.php?type=patient">Já possui cadastro? Faça login</a>
-    </div>
-</section>
+
 
 
 
 <?php elseif($type=='doctor'): 
     ?>
-    <div id="bordagrande">
-    <h2>Faça seu cadastro <br/>Saúde é coisa séria!</h2>
-  
-    <div id="central">
+    <div id="Fotolado">
+        <h2>Faça seu Cadastro! <br> Para médicos</h2>
+        <img src="<?=BASE_URL?>/public/img/fundocleaNika.png">
+    </div>
+    <div id="central" style="height: 820px;">
+    <img src="<?=BASE_URL?>/public/img/logocleaNika.png"  padding-top: 20px;
+            width: 230px;
+            height: 140px;>
         <center>
-            <form action="doctor_insert.php" method="post">
+            <form action="doctor_insert.php" method="post" >
             <br><br> 
                 <label for="crm">CRM</label>
-                <input type="text" name="crm" class="form-control" placeholder="Digite seu CRM" id="crm">
+                <input type="text" name="crm"  placeholder="Digite seu CRM" id="crm">
                 <br><br>
                 
                 
-                <label for="crm" class="form-label">Nome</label>
-                <input type="text" name="name" class="form-control" placeholder="Digite seu nome" id="crm">
+                <label for="crm">Nome</label>
+                <input type="text" name="name" placeholder="Digite seu nome" id="crm">
                 <br><br>
-                <div>
+                
+                    <label for="specialty">Especialidade</label>
+                    <input type="text" name="specialty"  placeholder="Digite sua especialidade" id="specialty">
+                
+                    <br><br>
+                    <label for="phone" >Telefone</label>
+                    <input type="tel" name="phone"  placeholder="Digite seu telefone" id="phone">
+                
+                    <br><br>
+                    <label for="address" >Endereço</label>
+                    <input type="tel" name="address"  placeholder="Digite seu endereço" id="address">
+                    <br><br>
+                
+                    <label for="pass">Senha</label>
+                    <input type="password" name="pass"  placeholder="Digite sua senha" id="pass"> <br><br>
                     <p>Sexo</p>
-                    <input type="radio" name="gender" id="male" class="form-check-input" value="M">
-                    <label for="male" class="form-check-label">M</label>
-                    <input type="radio" name="gender" id="female" class="form-check-input" value="F">
-                    <label for="female" class="form-check-label">F</label>
-                </div>
-                <br><br>
-                    <label for="specialty" class="form-label">Especialidade</label>
-                    <input type="text" name="specialty" class="form-control" placeholder="Digite sua especialidade" id="specialty">
-                
-                    <br><br>
-                    <label for="phone" class="form-label">Telefone</label>
-                    <input type="tel" name="phone" class="form-control" placeholder="Digite seu telefone" id="phone">
-                
-                    <br><br>>
-                    <label for="address" class="form-label">Endereço</label>
-                    <input type="tel" name="address" class="form-control" placeholder="Digite seu endereço" id="address">
-                    <br><br>
-                
-                    <label for="pass" class="form-label">Digite sua senha</label>
-                    <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-                            
-                <button type="submit" class="btn btn-primary">Fazer o cadastro</button>
+                    <div class="grupo">
+                    <input type="radio" name="gender" id="male" value="M">
+                    <label for="male">Masculino</label>
+                    <input type="radio" name="gender" id="female" value="F">
+                    <label for="female">Feminino</label>
+                    
+                    </div>
+                    <button type="submit">Fazer o cadastro</button> <br> <br>
+                    <a href="login.php?type=doctor">Já possui cadastro? Faça login</a>
+               
             </form>
         </center>
     </div>
    
-</div>
-<div>
-        <a href="login.php?type=doctor">Já possui cadastro? Faça login</a>
-    </div>
+
+
+       
+    
 
 <?php elseif($type=='employee'): ?>
-
-    <section class="container">
-    <div>
-        <h1>Faça seu cadastro</h1>
+<div id="Fotolado">
+        <h2>Faça seu Cadastro! <br>Para funcionários</h2>
+     
+        <img src="<?=BASE_URL?>/public/img/fundocleaNika.png">
+</div>
+    <div id="central">
+    <img src="<?=BASE_URL?>/public/img/logocleaNika.png"  padding-top: 20px;
+            width: 230px;
+            height: 140px;>
+        <center>
+            <form action="employee_insert.php" method="post" class="form-login">
+         
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" placeholder="Digite seu CPF" id="cpf">
+              
+                
+                    <label for="name" >Nome</label>
+                    <input type="text" name="name" placeholder="Digite seu nome" id="name">
+              
+                    
+                <div class="mb-3">
+                    <label for="phone" >Telefone</label>
+                    <input type="tel" name="phone" placeholder="Digite seu telefone" id="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="address" >Endereço</label>
+                    <input type="tel" name="address" placeholder="Digite seu endereço" id="address">
+                </div>
+                <div>
+                <label for="office" >Cargo</label>
+                    <input type="text" name="office" placeholder="Digite seu cargo" id="office">
+                </div>
+                <div class="mb-3">
+                    <label for="pass" >Senha</label>
+                    <input type="password" name="pass" placeholder="Digite sua senha" id="pass">
+                </div>
+                <p >Sexo</p>
+                 <div class="grupo">
+                   
+                    <input type="radio" name="gender" id="male" value="M">
+                    <label for="male" >Masculino</label>
+                    <input type="radio" name="gender" id="female" value="F">
+                    <label for="female" >Feminino</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Fazer o cadastro</button> <br><br>
+                <a href="login.php?type=employee">Já tem sua conta? Faça seu Login!</a>
+            </form>
+        </center>
     </div>
-    <div >
-        <form action="employee_insert.php" method="post" class="form-login">
-        <div class="mb-3">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" name="cpf" class="form-control" placeholder="Digite seu CPF" id="cpf">
-            </div>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" name="name" class="form-control" placeholder="Digite seu nome" id="name">
-            </div>
-             <div class="mb-3">
-                <p class="form-label">Sexo</p>
-                <input type="radio" name="gender" id="male" class="form-check-input" value="M">
-                <label for="male" class="form-check-label">Masculino</label>
-                <input type="radio" name="gender" id="female" class="form-check-input" value="F">
-                <label for="female" class="form-check-label">Feminino</label>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Telefone</label>
-                <input type="tel" name="phone" class="form-control" placeholder="Digite seu telefone" id="phone">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Endereço</label>
-                <input type="tel" name="address" class="form-control" placeholder="Digite seu endereço" id="address">
-            </div>
-            <div>
-            <label for="office" class="form-label">Digite seu cargo</label>
-                <input type="text" name="office" class="form-control" placeholder="Digite seu cargo" id="office">
-            </div> 
-            <div class="mb-3">
-                <label for="pass" class="form-label">Digite sua senha</label>
-                <input type="password" name="pass" class="form-control" placeholder="Digite sua senha" id="pass">
-            </div>
+  
        
-            <button type="submit" class="btn btn-primary">Fazer o cadastro</button>
-        </form>
-    </div>
-    <div>
-        <a href="login.php?type=employee">Já possui cadastro? Faça login</a>
-    </div>
-</section>
+  
+
 
 <?php else:?>
 <h1>Setor não reconhecido</h1>

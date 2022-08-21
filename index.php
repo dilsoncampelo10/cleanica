@@ -1,127 +1,309 @@
-<?php require_once 'config/config.php'?>
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>/public/css/colorido.css">
-    <title>CleaNika</title>
-    <link rel="shortcut icon" href="<?=BASE_URL?>/public/img/logocleaNika.png" type="image/x-icon">
-<body>
+<?php require_once 'config/config.php';  
+      require_once 'templates/header.php';
+?>
 
-    <div class="global-div">
 
-        <div class="topo-div"></div>
-        <center>
-            <img src="<?=BASE_URL?>/public/img/CleaNika2.png">
-        </center>
-        
-        <div class="menu-div">
-            <ul>
-                <li><a href="<?=BASE_URL?>/" title="Home">Início</a></li>
-                <li><a href="appointment.php" href="<?=BASE_URL?>/appointment.php">Marcar consulta</a></li>
-                <li><a href="<?=BASE_URL?>/medicalrecord.php">Analisar prontuário</a></li>
-               
-                <li><a href="<?=BASE_URL?>/healthinsurance.php">Inscrever convênio</a></li>
-               
-                <li><a href="Galeria.html" href="#"> Quem Somos</a></li>
-                 <li><a href="#">Fale conosco</a></li>
-                 <li><a href="#" title="Exposição">Doe</a></li>
-                <li><a href="Galeria.html" href="#"> Serviços</a></li>
-                <li> Você não está logado</li>
-            </ul>
-        </div>
-
-        <div class="esq-div">
-
-            <div class="destaques-div">
-
-                <h5><center>Consultas</center></h5>
-
-                <div class="foto-destaque">  <img src="<?=BASE_URL?>/public/img/CleaNika10.png"></div>
-                <h1>Marque sua consulta sem sair de casa</h1>
-                <p class="right17">  Agora é possível fazer o agendamento da sua consulta sem perder o conforto da sua casa, basta acessar a área de "Marcar consulta" e caso não possua login, se cadastrar como um paciente, sem nenhum custo adicional.</p>
-                <a href="https://www.google.com/search?q=canal+de+dente&sxsrf=ALiCzsYSPCiidKz5iTVOgj0j3_bp4hpwfA:1660616317747&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjDyOjtpcr5AhUeu5UCHaQLChMQ_AUoAXoECAEQAw&biw=1366&bih=636&dpr=1#imgrc=S5CJJWqHnio3GM" title="Leia mais" class="leiamais" target="_blank">Link do Canal</a>
+        <?php  require_once 'templates/nav.php'; ?>
+        <section class="intro text-center section-padding" id="intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <h1 class="arrow">Novidades</h1>
+                <p>CleaNika <a href="#">Voltar ao Topo</a>. Na CleaNika, adotamos uma abordagem funcional - tendo como base os conceitos e pilares da medicina do estilo de vida, com um olhar personalizado e integrativo. Com as ferramentas atuais da medicina pós-genômica, buscamos entender e qualificar as interações do homem em seu ambiente, identificando a singularidade de cada paciente em seu modo de ser, viver, envelhecer e adoecer.</p>
+              </div>
             </div>
+          </div>
+        </section>
+        <section class="features text-center section-padding" id="features">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Espaço</h1>
+                <div class="features-wrapper">
+                  <div class="col-md-4 wp2">
+                    <div class="icon">
+                      <i class="fa fa-laptop shadow"></i>
+                    </div>
+                    <h2>Implementação de Tecnologia</h2>
+                    <p>Agora é possível implementar recursos como a telemedicina, análise preditiva hospitalar, o prontuário eletrônico e as escalas de trabalho digitais para melhorar a vida e o dia a dia de profissionais da saúde e pacientes, de forma exponencial.</p>
+                  </div>
+                  <div class="col-md-4 wp2 delay-05s">
+                    <div class="icon">
+                      <i class="fa fa-code shadow"></i>
+                    </div>
+                    <h2>Inovação</h2>
+                    <p>O consultório online permite o armazenamento seguro e criptografado de todas as informações sobre o atendimento em nuvem. Com isso, o médico pode consultar dados e o histórico do paciente em poucos cliques. Outro benefício é não precisar de amplos espaços na clínica para armazenar o prontuário do paciente fisicamente.</p>
+                  </div>
+                  <div class="col-md-4 wp2 delay-1s">
+                    <div class="icon">
+                      <i class="fa fa-heart shadow"></i>
+                    </div>
+                    <h2>Transplante</h2>
+                    <p>O transplante de coração é um avanço na área médica, através dele pacientes em estado grave de doenças cardíacas conseguem viver por mais tempo. A estimativa média de sobrevida de pessoas que passam por essa cirurgia é em torno de dez anos.</p>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services">
+            <div class="wrapper">
+              <div class="iphone">
+                <div class="wp3"></div>
+              </div>
+              <div class="fluid-white"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                  <div id="servicesSlider">
+                    <ul class="slides">
+                      <li>
+                        <h1 class="arrow">Medicos de Qualidade</h1>
+                        <p>O padrão de excelência do Hcor em cardiologia é reconhecido nacional e internacionalmente. Seus estudos se tornaram referenciais na medicina. Os processos internos são certificados pelos mais rigorosos órgãos de controle de qualidade e seus médicos têm inovações usadas nos principais centros de cardiologia do mundo. </p>
+                        <p>
+                       Mesmo antes de nascer, o feto já pode ser operado com segurança no hospital se graves defeitos no coração forem diagnosticados nessa fase da vida.</p>
 
-            <div class="chamadas-div">
-                <h4><center>Convênios</center></h4>
-                <div class="foto-destaque5">  <img src="<?=BASE_URL?>/public/img/Convenios.jpg"></div>
-
-                <p class="right17"><b>Caso você esteja interessado em se inscrever em um convênio, informe para um de nossos funcionários</b> </p>            <a href="#" title="Leia mais" class="leiamais">leia mais</a>
-                <h6>Informações</h6>
-                <ul class="maisartigos">
-                    <li><a href="#" title="Equipe">Ótimo benefício com o preço que cabe no seu bolso</a></li>
-                    <li><a href="#" title="Lorem impsum amet">Ótimos profissionais</b></a></li>
-
+                      </li>
+                      <li>
+                        <h1 class="arrow">Noticias</h1>
+                        <p>O Instituto Nacional de Cardiologia (INC), órgão de referência do SUS para o tratamento de alta complexidade de doenças cardiovasculares, enviou o anestesista Gabriel Machado, membro de sua equipe de transplante pulmonar, para acompanhar um transplante duplo coração-pulmão, realizado em 28 de julho no Hospital Israelita Albert Einstein, em São Paulo.</p>
+                        
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="swag text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h1>Nosso espaço para você</h1>
+                <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="portfolio text-center section-padding" id="portfolio">
+          <div class="container">
+            <div class="row">
+              <div id="portfolioSlider">
+                <ul class="slides">
+                  <li>
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="<?=BASE_URL?>/public/img/portfolio-01.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Equipamentos</h2>
+                      <p>A rotina de um hospital pede qualidade e diversidade nos equipamentos para atender a todas as necessidades dos pacientes.</p>
+                    </div>
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix ">
+                        <div class="img">
+                          <img src="<?=BASE_URL?>/public/img/portfolio-02.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Quartos</h2>
+                      <p>Um quarto hospitalar deve ser funcional, confortável e trazer segurança para os pacientes, profissionais da saúde e acompanhantes</p>
+                    </div>
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="<?=BASE_URL?>/public/img/portfolio-03.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Centro Cirugico</h2>
+                      <p>As salas cirúrgicas inteligentes, ou salas cirúrgicas integradas, são aparelhadas com equipamentos integrados, para ter melhor performance no centro cirúrgico. É possível acessar, em tempo real, os dados atualizados do paciente de maneira digital.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="<?=BASE_URL?>/public/img/portfolio-01.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Equipamentos</h2>
+                      <p>Estar pronto para os atendimentos de emergência e contar também com as melhores ferramentas para o tratamento de especialidades, é indispensável para o bom funcionamento dos hospitais.</p>
+                    </div>
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="<?=BASE_URL?>/public/img/portfolio-02.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Quartos</h2>
+                      <p>Local disponível para os cirugiados</p>
+                    </div>
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="<?=BASE_URL?>/public/img/portfolio-03.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Centro Cirugico</h2>
+                      <p>Marcelo Vallim, gerente de produtos cirúrgicos da Steris América Latina, explica que “As salas convencionais funcionam como uma ilha. A sala inteligente, por outro lado, faz parte dos processos do hospital justamente porque é integrada por meio das tecnologias que nela estão presentes. Em uma sala de cirurgia tradicional, é necessário trazer todos os exames impressos para o procedimento.</p>
+                    </div>
+                  </li>
                 </ul>
+              </div>
             </div>
-
-            <div class="chamadas-div left17">
-
-                <h4> <center>Nóticias</center></h4>
-
-
-                <div class="foto-destaque6">  <img src="<?=BASE_URL?>/public/img/CleaNika11.jpg"></div>
-                <p><b>Você também pode ficar ligado nas notícias sobre nossa Cleanika</h6>
-                <p><b>Conteúdos interessantes para você</b></p>
-                <a href="#" title="Leia mais" class="leiamais">leia mais</a>
-
-
-
+          </div>
+        </section>
+        <div class="ignite-cta text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="<?=BASE_URL?>/healthinsurance.php" class="ignite-btn">Sua saúde em primeiro lugar!</a>
+              </div>
             </div>
-
-
-            <br>
-
-
+          </div>
         </div>
+        <section class="team text-center section-padding" id="team">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Equipe Medica</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="team-wrapper">
+                <div id="teamSlider">
+                  <ul class="slides">
+                    <li>
+                      <div class="col-md-4 wp5">
+                        <img src="<?=BASE_URL?>/public/img/team-01.png" alt="Team Member">
+                        <h2>Bryan</h2>
+                        <p>Pitanguy atendeu diversas celebridades e chefes de Estado e desenvolveu técnicas inovadoras em intervenções cirúrgicas que se tornaram padrão e são seguidas até hoje pelos cirurgiões.</p>
+                        <div class="social">
+                          <ul class="social-buttons">
+                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
 
-        <div class="dir-div">
-
+                      <div class="col-md-4 wp5 delay-05s">
+                        <img src="<?=BASE_URL?>/public/img/team-02.png" alt="Team Member">
+                        <h2>Bita</h2>
+                        <p>pesquisadora a comprovar a associação entre o vírus zika e a epidemia de microcefalia, doença que causa má-formação dos fetos. A obstetra, mestre e pós-doutora em parto, saúde materno-infantil e da mulher, trabalha em Campina Grande, no interior da Paraíba, onde atualmente faz atendimento gratuito.</p>
+                        <div class="social">
+                          <ul class="social-buttons">
+                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-4 wp5 delay-1s">
+                        <img src="<?=BASE_URL?>/public/img/team-03.png" alt="Team Member">
+                        <h2>Bob</h2>
+                        <p>Criou o serviço de transplantes no Hospital São Paulo, maior centro público de transplantes do mundo, que faz mil destes procedimentos por ano e transplantou mais de 12 mil pessoas pelo sistema público de saúde.</p>
+                         <div class="social">
+                          <ul class="social-buttons">
+                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                          </ul>
+                        </div>
+                    </li>
+                  </ul>
+                  <div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="subscribe text-center">
+          <div class="container">
+            <h1><i class="fa fa-paper-plane"></i><span>Pesquisar</span></h1>
             <form action="#">
-                <fieldset>
-                    <br>
-                    <img src="<?=BASE_URL?>/public/img/logocleaNika.png" class="busca..." />
-                    <input type="text" name="termo" class="busca" placeholder="Buscar" />
-                </fieldset>
+              <input type="text" name="" value="" placeholder="" required>
+              <input type="submit" name="" value="Acessar">
             </form>
-
-            <div class="maislidos-div">
-                <h4>Mais lidos</h4>
-                <ul class="maisartigos escuro top8">
-                    <li><a href="#" title="Nossa Programação ">Consultas Disponível</a></li>
-                    <li><a href="#" title="Equipe">Conheça nossa Equipe</a></li>
-                    
-
+          </div>
+        </section>
+        <section class="dark-bg text-center section-padding contact-wrap" id="contact">
+          <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Informações</h1>
+              </div>
+            </div>
+            <div class="row contact-details">
+              <div class="col-md-4">
+                <div class="light-box box-hover">
+                  <h2><i class="fa fa-map-marker"></i><span>Endereço</span></h2>
+                  <p>Avenida cabeça de Galo, centro de assu.</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="light-box box-hover">
+                  <h2><i class="fa fa-mobile"></i><span>Telefone</span></h2>
+                  <p>+84 9 84028922</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="light-box box-hover">
+                  <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                  <p><a href="#">@CleNika.com.br</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="social-buttons">
+                  <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
                 </ul>
+              </div>
             </div>
-            <br>
-            <img src="<?=BASE_URL?>/public/img/CleaNika10.png" height="152px" width="268px">
-            <img src="<?=BASE_URL?>/public/img/CleaNika9.jpg" height="152px" width="268px">
-
-        </div>
-
-        <div class="dir-div2">
-
-            <form action="#">
-                <fieldset>
-                    <br>
-                    <img src="<?=BASE_URL?>/public/img/CleaNika6.png" />
-                    <img src="<?=BASE_URL?>/public/img/CleaNika7.png">
-                    <img src="<?=BASE_URL?>/public/img/CleaNika9.jpg">
-                    <img src="<?=BASE_URL?>/public/img/CleaNika10.png">
-                </fieldset>
-            </form>
-            <div id="grid">
-  <img src="<?=BASE_URL?>/public/img/galeria1.jpg">
-  <img src="<?=BASE_URL?>/public/img/galeria2.jpg">
-  <img src="<?=BASE_URL?>/public/img/galeria3.jpg">
-</div>
-        </div>
-
-        <div class="rodape-div"><p>IFRN-Campus Ipanguaçu</p></div>
-
-    </div>
-
-    </div>
-    
-<?php require_once 'templates/footer.php'?>
+          </div>
+        </section>
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="legals">
+                  <li><a href="#">Termos &amp; cleaNika</a></li>
+                  
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+       <?php require_once 'templates/footer.php';?>
