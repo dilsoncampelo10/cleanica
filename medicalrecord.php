@@ -42,9 +42,11 @@ if($_SESSION['doctor']):
                   <nav class="pull">
                     <ul class="top-nav">
                       <li><a href="<?=BASE_URL?>">Inicio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="<?=BASE_URL?>/appointment.php">Realizar cadastro<span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      
         
                       <li><a href="<?=BASE_URL?>/medicalrecord.php?desconnect">Desconectar <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+
+                      <li><a href="<?=BASE_URL?>/#">Você está logado como médico<span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                       
                     </ul>
                   </nav>
