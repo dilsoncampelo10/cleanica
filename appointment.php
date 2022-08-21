@@ -43,9 +43,10 @@ if($_SESSION['patient']):
                   <nav class="pull">
                     <ul class="top-nav">
                       <li><a href="<?=BASE_URL?>">Inicio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-                      <li><a href="<?=BASE_URL?>/appointment.php">Realizar cadastro<span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-        
+                     
                       <li><a href="<?=BASE_URL?>/appointment.php?desconnect">Desconectar <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      
+                      <li><a href="#">Você está logado como paciente <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
                       
                     </ul>
                   </nav>
@@ -136,7 +137,7 @@ if($_SESSION['patient']):
                         <td><?=$item->getDoctor()?></td>
                         <td>
                             <a href="<?=BASE_URL?>/edit.php?edit_ap=<?=$item->getId()?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="<?=BASE_URL?>/appointment_process.php?delete=<?=$item->getId()?>"><i class="fa-solid fa-delete-left"></i></a>
+                            <a href="<?=BASE_URL?>/appointment_process.php?delete=<?=$item->getId()?>" onclick="return confirm('Deseja mesmo cancelar essa consulta?')"><i class="fa-solid fa-delete-left"></i></a>
                         </td>
                     </tr>
                     <?php endforeach ?>

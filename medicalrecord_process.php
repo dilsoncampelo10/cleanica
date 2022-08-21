@@ -44,7 +44,7 @@ if(isset($_POST['ok'])){
 if($_GET['delete']){
    
     $medicalrecordDao->delete($id_delet);
- 
+    $_SESSION['alert'] = 'Prontuário deletado';
    
     header("location: ".BASE_URL."/medicalrecord.php");
     exit();
@@ -72,6 +72,7 @@ if($type=='medicalrecord'){
     $medicalrecord->setExam($exam);
 
     $medicalrecordDao->update($medicalrecord);
+    $_SESSION['alert'] = 'Prontuário alterado';
 
     header("location: ".BASE_URL."/medicalrecord.php");
     exit();

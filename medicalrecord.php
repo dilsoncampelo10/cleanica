@@ -8,6 +8,8 @@ if(!isset($_COOKIE['user'])&& !isset($_COOKIE['check'])){
 }
 
 
+
+
 $medicalrecord = new MedicalrecordDaoMysql($pdo);
 
 $data = $medicalrecord->findAll();
@@ -15,6 +17,11 @@ $data = $medicalrecord->findAll();
 if($_SESSION['doctor']):
 ?>
 <?php 
+
+    if($_SESSION['alert']){
+      echo "<div class='alert alert-info container' role='alert'>".$_SESSION['alert']."</div>";
+    $_SESSION['alert'] = '';
+  }
       require_once 'templates/header.php';
 
       if(isset($_GET['desconnect'])){
@@ -106,7 +113,7 @@ if($_SESSION['doctor']):
             <button type="submit" class="btn btn-primary" name="ok">Criar prontuário</button>
         </form>
         <div class="container" id="medi">
-                <h1>Confira consultas já marcadas</h1>
+                <h1>Confira prontuários já criados</h1>
                 <div>
                 
                 <table class="table table-success table-striped" id="table">

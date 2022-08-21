@@ -1,17 +1,61 @@
 <?php
+require_once 'config/config.php';
 require_once 'templates/header.php';
-require_once 'templates/navlog.php';
-if($_GET['edit_ap']):?>
+?>
+<header id="home">
+          <nav>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                  <nav class="pull">
+                    <ul class="top-nav">
+                      <li><a href="<?=BASE_URL?>">Inicio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="<?=BASE_URL?>/appointment.php">Realizar cadastro<span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+        
+                      <li><a href="<?=BASE_URL?>/appointment.php?desconnect">Desconectar <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <section class="hero" id="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                  <h1 class="animated fadeInDown">Faça a edição!</h1>
+                  <p class="animated fadeInUp delay-05s">Logo abaixo poderá alerar as informações</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <a href="#edit_a" class="learn-more-btn">Edite os dados</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </header>
+
+
+<?php
+if(isset($_GET['edit_ap'])):?>
 
 <?php 
+
 $id = $_GET['edit_ap'];
-require_once 'config/config.php';
+
 require_once 'dao/AppointmentDaoMysql.php';
 $ap = new AppointmentDaoMysql($pdo); 
 $obj = $ap->findById($id);
 ?>
 
-<form action="appointment_process.php" method="post" class="mb-3 container form-main">
+<form action="appointment_process.php" method="post" class="mb-3 container form-main" id="edit_a">
             <input type="hidden" name="type" value="appointment">
             <input type="hidden" name="id" value="<?=$obj->getId()?>">
             <div class="mb-3">
@@ -29,7 +73,7 @@ $obj = $ap->findById($id);
             <div class="mb-3">
                     <label for="doctor" class="form-label">Nome do médico</label>
                     <input type="text" name="doctor" class="form-control" placeholder="Digite nome do médico" id="doctor" value="<?=$obj->getDoctor()?>">
-            </div>
+            </div> <br> <br>
             <button type="submit" class="btn btn-primary">Editar consulta</button>
         </form>
 
@@ -43,7 +87,7 @@ $obj = $ap->findById($id);
          $obj = $md->findById($id);
 ?>
 
-    <form action="medicalrecord_process.php" method="post" class="mb-3 form-main">
+    <form action="medicalrecord_process.php" method="post" class="mb-3 form-main container">
             <input type="hidden" name="type" value="medicalrecord">
             <input type="hidden" name="id" value="<?=$obj->getId()?>">
             <div class="mb-3">
@@ -73,8 +117,40 @@ $obj = $ap->findById($id);
             <div class="mb-3">
                     <label for="exam" class="form-label">Exame</label>
                     <input type="text" name="exam" class="form-control" placeholder="Digite o exame" id="exam" value="<?=$obj->getExam()?>">
-            </div>
+            </div> <br> <br>
             <button type="submit" class="btn btn-primary">Editar prontuário</button>
         </form>
 
-<?php endif;?>
+<?php elseif ($_GET['edit_hi']): ?>
+
+        <?php 
+         $id = $_GET['edit_hi'];
+         require_once 'config/config.php';
+         require_once 'dao/HealthinsuranceDaoMysql.php';
+         $hi = new HealthinsuranceDaoMysql($pdo); 
+         $obj = $hi->findById($id);
+        ?>
+
+        <form action="healthinsurance_process.php" method="post" class="mb-3 form-main container">
+            <input type="hidden" name="type" value="healthinsurance">
+            <input type="hidden" name="id" value="<?=$obj->getId()?>">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" name="name" class="form-control" id="name" value="<?=$obj->getName()?>">
+            </div>
+            <div class="mb-3">
+                    <label for="phone" class="form-label">Telefone</label>
+                    <input type="text" name="phone" class="form-control" id="phone" value="<?=$obj->getPhone()?>">
+            </div> <br><br>
+             
+            <button type="submit" class="btn btn-primary">Editar convênio</button>
+        </form>
+
+
+
+
+<?php
+endif;
+
+require_once 'templates/footer.php';
+?>

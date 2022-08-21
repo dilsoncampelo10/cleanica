@@ -13,7 +13,7 @@ class HealthinsuranceDaoMysql implements HealthinsuranceDao{
     public function add(Healthinsurance $h){
         $sql = $this->pdo->prepare("INSERT INTO convenios (nome,telefone) VALUES (:nome,:telefone)");
       
-        $sql->bindValue(":name",$h->getName());
+        $sql->bindValue(":nome",$h->getName());
         $sql->bindValue(":telefone",$h->getPhone());
 
         $sql->execute();
@@ -40,17 +40,15 @@ class HealthinsuranceDaoMysql implements HealthinsuranceDao{
     }
 
     public function findById($id){
-        $sql = $this->pdo->prepare("SELECT * FROM consultas WHERE id = :id");
+        $sql = $this->pdo->prepare("SELECT * FROM convenios WHERE id = :id");
         $sql->bindValue(":id",$id);
         $sql->execute();
         if($sql->rowCount()>0){
-            $a = new Appointment();
+            $a = new Healthinsurance();
             $data = $sql->fetch(PDO::FETCH_ASSOC);
             $a->setId($data['id']);
-            $a->setDate($data['data']);
-            $a->setTime($data['hora']);
-            $a->setPatient($data['paciente']);
-            $a->setDoctor($data['medico']);
+            $a->setName($data['nome']);
+            $a->setPhone($data['telefone']);
 
             return $a;
         } else{
@@ -71,6 +69,5 @@ class HealthinsuranceDaoMysql implements HealthinsuranceDao{
         $sql = $this->pdo->prepare("DELETE FROM convenios WHERE id = :id");
         $sql->bindValue(":id",$id);
         $sql->execute();
-
     }
 }

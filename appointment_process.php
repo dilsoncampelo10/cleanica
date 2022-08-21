@@ -36,8 +36,9 @@ if(isset($_POST['ok'])){
 
 if($_GET['delete']){
    
-    $appointmentDao->delete($id);
+    $appointmentDao->delete($id_delet);
  
+    $_SESSION['alert'] = 'Consulta cancelada';
     header("location: ".BASE_URL."/appointment.php");
     exit();
 }
@@ -57,8 +58,9 @@ if($type=='appointment'){
     $appointment->setPatient($patient);
     $appointment->setDoctor($doctor);
 
+    
     $appointmentDao->update($appointment);
-
+    $_SESSION['alert'] = 'Consulta alterada com sucesso';
     header("location: ".BASE_URL."/appointment.php");
     exit();
 }

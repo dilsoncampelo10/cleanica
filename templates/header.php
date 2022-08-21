@@ -14,6 +14,7 @@
     <link href="<?=BASE_URL?>/public/css/animate.css" rel="stylesheet">
     <!--Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="<?=BASE_URL?>/public/img/logocleaNika.png" type="image/x-icon">
       <style>
         .alert{
             position: absolute;
