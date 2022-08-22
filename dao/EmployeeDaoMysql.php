@@ -56,6 +56,9 @@ class EmployeeDaoMysql implements EmployeeDao{
     }
 
     public function delete($cpf){
+        $sql = $this->pdo->prepare("DELETE FROM funcionarios WHERE cpf = :cpf");
+        $sql->bindValue(":cpf",$cpf);
+        $sql->execute();
 
     }
 }

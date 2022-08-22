@@ -50,10 +50,13 @@ class PatientDaoMysql implements PatientDao{
     }
 
     public function update(Patient $p){
+       
 
     }
 
     public function delete($cpf){
-
+        $sql = $this->pdo->prepare("DELETE FROM pacientes WHERE cpf = :cpf");
+        $sql->bindValue(":cpf",$cpf);
+        $sql->execute();
     }
 }

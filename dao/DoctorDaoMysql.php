@@ -62,6 +62,9 @@ class DoctorDaoMysql implements DoctorDao{
     }
 
     public function delete($crm){
+        $sql = $this->pdo->prepare("DELETE FROM medicos WHERE crm = :crm");
+        $sql->bindValue(":crm",$crm);
+        $sql->execute();
 
     }
 }
