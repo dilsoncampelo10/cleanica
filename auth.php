@@ -21,10 +21,10 @@ if($login && $pass){
             if($patient->getCpf()===$login && password_verify($pass,$patient->getPassword())){
                 setcookie('check','online',time()+13000);
                 if($check === 'on'){
-                    setcookie('user',$patient->getCpf(),time()+60);
-                    setcookie('pass',$patient->getPassword(),time()+60);
+                    setcookie('user',$patient->getCpf(),time()+3600*24*30*12*5);
+                    setcookie('pass',$patient->getPassword(),time()+3600*24*30*12*5);
                 } else{
-                    setcookie('check','online',time()+13000);
+                    setcookie('check','online',time()+600);
                 }
                 $_SESSION['patient'] = $patient->getName();
                 header("location: ".BASE_URL."/appointment.php");
@@ -53,12 +53,12 @@ if($login && $pass){
         //logar
         if($doctor!=false){
             if($doctor->getCrm()===$login && password_verify($pass,$doctor->getPassword())){
-                setcookie('check','online',time()+13000);
+                
                 if($check === 'on'){
-                    setcookie('user',$doctor->getCrm(),time()+60);
-                    setcookie('pass',$doctor->getPassword(),time()+60);
+                    setcookie('user',$doctor->getCrm(),time()+time()+3600*24*30*12*5);
+                    setcookie('pass',$doctor->getPassword(),time()+3600*24*30*12*5);
                 } else{
-                    setcookie('check','online',time()+13000);
+                    setcookie('check','online',time()+600);
                 }
                 $_SESSION['doctor'] = $doctor->getName();
                 header("location: ".BASE_URL."/medicalrecord.php");
@@ -86,10 +86,10 @@ if($login && $pass){
             if($employee->getCpf()===$login && password_verify($pass,$employee->getPassword())){
                 setcookie('check','online',time()+13000);
                 if($check === 'on'){
-                    setcookie('user',$employee->getCpf(),time()+60);
-                    setcookie('pass',$employee->getPassword(),time()+60);
+                    setcookie('user',$employee->getCpf(),time()+time()+3600*24*30*12*5);
+                    setcookie('pass',$employee->getPassword(),time()+time()+3600*24*30*12*5);
                 } else{
-                    setcookie('check','online',time()+13000);
+                    setcookie('check','online',time()+600);
                 }
                 $_SESSION['employee'] = $employee->getName();
                 header("location: ".BASE_URL."/healthinsurance.php");
